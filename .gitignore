@@ -1,0 +1,17 @@
+# Node.js dependencies
+node_modules/
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+
+# Generated extension files
+_metadata/
+
+# Temporary files
+errors.md
+
+# Tor bundle (as it's a local dependency)
+tor-bundle/

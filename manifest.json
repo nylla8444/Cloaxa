@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "Cloaxa",
+  "version": "1.0",
+  "description": "An IP-masking browser extension powered by Tor routing.",
+  "permissions": [
+    "proxy",
+    "storage",
+    "privacy",
+    "declarativeNetRequest",
+    "scripting",
+    "geolocation"
+  ],
+  "host_permissions": [
+    "https://api.ipify.org/*",
+    "https://check.torproject.org/api/ip"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/cloaxa.png",
+      "48": "icons/cloaxa.png",
+      "128": "icons/cloaxa.png"
+    }
+  },
+  "icons": {
+    "16": "icons/cloaxa.png",
+    "48": "icons/cloaxa.png",
+    "128": "icons/cloaxa.png"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": false,
+        "path": "rules.json"
+      },
+      {
+        "id": "kill_switch_ruleset",
+        "enabled": false,
+        "path": "kill_switch_rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

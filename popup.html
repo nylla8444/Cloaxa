@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloaxa</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      width: 320px;
+      background-color: #1a1a2e; /* Dark background */
+      color: #e0e0e0; /* Light text */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 48px;
+      height: 24px;
+    }
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #4a4a6a;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #8a2be2; /* Purple */
+    }
+    input:focus + .slider {
+      box-shadow: 0 0 1px #8a2be2;
+    }
+    input:checked + .slider:before {
+      -webkit-transform: translateX(24px);
+      -ms-transform: translateX(24px);
+      transform: translateX(24px);
+    }
+    .card {
+      background-color: #2a2a4a; /* Slightly lighter dark for cards */
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .status-indicator {
+      font-weight: bold;
+    }
+    .status-enabled {
+      color: #8a2be2; /* Purple */
+    }
+    .status-disabled {
+      color: #ff6b6b; /* Red */
+    }
+    .status-info {
+      color: #6a9955; /* Greenish for info */
+    }
+    .status-warning {
+      color: #ffcc00; /* Yellow for warning */
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+  <div class="p-5">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-extrabold text-purple-400">Cloaxa</h1>
+      <label class="switch">
+        <input type="checkbox" id="torToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div id="mainStatus" class="text-center text-2xl font-bold mb-6 status-disabled">Tor Disabled</div>
+    <div id="error" class="text-center text-red-500 text-sm mb-4"></div>
+
+    <div class="grid grid-cols-1 gap-4">
+      <div id="connectionInfo" class="card">
+        <h2 class="text-lg font-bold mb-3 text-purple-300">Connection Info</h2>
+        <div class="flex justify-between items-center mb-2">
+          <span>IP Address:</span>
+          <span id="ipAddress" class="font-mono text-sm status-info">N/A</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>Tor Status:</span>
+          <span id="torStatus" class="font-mono text-sm status-disabled">Not Connected</span>
+        </div>
+      </div>
+
+      <div id="securityInfo" class="card">
+        <h2 class="text-lg font-bold mb-3 text-purple-300">Security Features</h2>
+        <div class="flex justify-between items-center mb-2">
+          <span>WebRTC Protection:</span>
+          <span id="webRtcStatus" class="font-mono text-sm status-warning">Default</span>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+          <span>User-Agent Spoofing:</span>
+          <span id="userAgentStatus" class="font-mono text-sm status-warning">Default</span>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+          <span>Referer Spoofing:</span>
+          <span id="refererStatus" class="font-mono text-sm status-warning">Default</span>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+          <span>Timezone Spoofing:</span>
+          <span id="timezoneStatus" class="font-mono text-sm status-warning">Default</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>Geolocation Spoofing:</span>
+          <span id="geolocationStatus" class="font-mono text-sm status-warning">Default</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
