@@ -66,6 +66,16 @@ Once the Tor service is running, it will open a SOCKS5 proxy on `127.0.0.1:9050`
 *   **External Tor Dependency:** It relies on a locally running Tor service. It does not provide the Tor network access itself.
 *   **Advanced Fingerprinting:** While it implements several anti-fingerprinting measures, highly sophisticated tracking techniques might still exist that could potentially bypass these overrides.
 
+## ✨ How it looks like:
+
+<table>
+  <tr>
+  <td><img src="icons/ext-look.png" alt="Image 1" width="300"/></td>
+  <td> <img src="icons/proof.png" alt="Image 2" width="1000"/></td>
+   </tr>
+</table>
+
+
 ## 📜 Disclaimer
 
 This extension aims to enhance privacy but may not provide the same level of security as the Tor Browser for all use cases. Use it at your own risk.
