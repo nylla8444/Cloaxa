@@ -1,4 +1,4 @@
-# Cloaxa  cloaking device
+# Cloaxa 🧅
 
  <img src="icons/cloaxa.png" alt="Cloaxa Logo" width="200" height="200"/>
 
