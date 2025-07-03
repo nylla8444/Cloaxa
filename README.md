@@ -19,6 +19,19 @@ This extension configures your browser to use a SOCKS5 proxy running on `127.0.0
 *   **Geolocation Spoofing:** Intercepts geolocation requests and provides a generic, fake location to prevent websites from accessing your real physical coordinates.
 *   **Persistence:** The extension's state (Tor enabled/disabled) is saved and restored across browser sessions.
 
+## ✨ How it looks like:
+
+<table>
+  <tr>
+  <td><img src="icons/ext-look.png" alt="Image 1" width="300"/></td>
+  <td> <img src="icons/proof.png" alt="Image 2" width="1000"/></td>
+   </tr>
+</table>
+
+## ⚔️ Difference Between VPN and Cloaxa
+![image](https://github.com/user-attachments/assets/08aa6950-38ef-45b8-923f-25d205d17380)
+
+
 ## 📋 Prerequisites
 
 **<font color="orange">Important:</font>** This extension requires the **standalone Tor service**, not the Tor Browser. The Tor Browser and the standalone Tor service are different applications.
@@ -29,7 +42,9 @@ You must install and run the Tor service on your local machine.
 
 1.  Download the "Expert Bundle" from the [Tor Project website](https://www.torproject.org/download/tor/).
 2.  Extract the files to a desired location.
-3.  Navigate to the extracted folder in your command line and run Tor: `tor.exe`
+3.  Navigate to the extracted folder in your File Explorer.
+4.  Find `tor` folder -> `tor.exe` (path is: extracted-folder/tor/tor.exe)
+5.  Double click `tor.exe` to run and wait for it to connect.
 
 **macOS:**
 
@@ -65,16 +80,6 @@ Once the Tor service is running, it will open a SOCKS5 proxy on `127.0.0.1:9050`
 *   **Browser-Level Only:** This extension only affects traffic originating from the browser. It does not provide system-wide IP masking like a full VPN client.
 *   **External Tor Dependency:** It relies on a locally running Tor service. It does not provide the Tor network access itself.
 *   **Advanced Fingerprinting:** While it implements several anti-fingerprinting measures, highly sophisticated tracking techniques might still exist that could potentially bypass these overrides.
-
-## ✨ How it looks like:
-
-<table>
-  <tr>
-  <td><img src="icons/ext-look.png" alt="Image 1" width="300"/></td>
-  <td> <img src="icons/proof.png" alt="Image 2" width="1000"/></td>
-   </tr>
-</table>
-
 
 ## 📜 Disclaimer
 
