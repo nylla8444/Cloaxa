@@ -12,12 +12,16 @@ This extension configures your browser to use a SOCKS5 proxy running on `127.0.0
 ## ✨ Features
 
 *   **IP Masking via Tor:** Routes your browser's traffic through the Tor network, effectively masking your real IP address.
+*   **.onion Site Access:** Enables access to websites on the Tor network with `.onion` addresses.
+*   **Canvas Fingerprinting Protection:** Actively spoofs canvas rendering to prevent unique browser fingerprinting.
+*   **Cookie Auto-Destruction:** Automatically deletes cookies for a domain when its last tab is closed, enhancing privacy.
 *   **WebRTC Leak Prevention:** Implements measures to prevent WebRTC from revealing your real IP address.
 *   **Kill Switch:** Automatically blocks all browser network traffic if the connection to the Tor proxy is lost, preventing accidental IP leaks.
 *   **HTTP Header Control:** Spoofs common HTTP headers like `User-Agent` and `Referer` to make it harder for websites to identify and track your browser.
 *   **Timezone Spoofing:** Reports a generic UTC timezone to websites, helping to mitigate timezone-based browser fingerprinting.
 *   **Geolocation Spoofing:** Intercepts geolocation requests and provides a generic, fake location to prevent websites from accessing your real physical coordinates.
 *   **Persistence:** The extension's state (Tor enabled/disabled) is saved and restored across browser sessions.
+*   **"New Identity" Button:** Allows users to quickly request a new Tor circuit, effectively changing their exit IP address.
 
 ## ✨ How it looks like:
 
@@ -74,6 +78,15 @@ Once the Tor service is running, it will open a SOCKS5 proxy on `127.0.0.1:9050`
 1.  Make sure the Tor service is running on your machine.
 2.  Click the Cloaxa icon in your browser's toolbar.
 3.  Use the toggle switch to enable or disable Tor routing.
+4.  **Reload Button:** If the extension encounters an error or becomes unresponsive, click the 'Reload' button in the popup to restart the extension to a clean state.
+5.  **New Identity Button:** When Tor is enabled, click the 'New Identity' button to request a new Tor circuit and change your exit IP address.
+
+## 📊 Understanding Status Indicators
+
+To help you understand the extension's current state, the popup displays several indicators:
+
+*   **Service Status:** This indicates whether the extension's background script (the core logic) is successfully communicating with the popup UI. If it shows 'Connected', the UI can send commands and receive updates. If 'Disconnected', there's an internal communication issue, and you might need to reload the extension.
+*   **Tor Status:** This indicates whether your browser's traffic is currently being routed through the Tor network and if the Tor proxy is reachable. 'Connected' means your traffic is likely going through Tor. 'Not Connected' means the proxy is not active or reachable.
 
 ## ⚠️ Limitations
 

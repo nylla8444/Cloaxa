@@ -90,7 +90,12 @@
     </div>
 
     <div id="mainStatus" class="text-center text-2xl font-bold mb-6 status-disabled">Tor Disabled</div>
+    <div id="killSwitchMessage" class="text-center text-white bg-red-600 mb-4" style="display: none;"></div>
     <div id="error" class="text-center text-red-500 text-sm mb-4"></div>
+    <div class="text-center mb-4">
+      <button id="reloadButton" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" style="display: none;">Reload</button>
+      <button id="newIdentityButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2" style="display: none;">New Identity</button>
+    </div>
 
     <div class="grid grid-cols-1 gap-4">
       <div id="connectionInfo" class="card">
@@ -102,6 +107,10 @@
         <div class="flex justify-between items-center">
           <span>Tor Status:</span>
           <span id="torStatus" class="font-mono text-sm status-disabled">Not Connected</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span>Service Status:</span>
+          <span id="serviceStatus" class="font-mono text-sm status-warning">Disconnected</span>
         </div>
       </div>
 
@@ -130,6 +139,7 @@
       </div>
     </div>
   </div>
+  <script src="utils.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>
