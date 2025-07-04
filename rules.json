@@ -13,7 +13,7 @@
         {
           "header": "Referer",
           "operation": "set",
-          "value": "https://www.google.com/"
+          "value": ""
         }
       ]
     },

@@ -83,5 +83,37 @@ function spoofGeolocation() {
   }
 }
 
+function spoofCanvas() {
+  try {
+    const originalToDataURL = HTMLCanvasElement.prototype.toDataURL;
+    Object.defineProperty(HTMLCanvasElement.prototype, 'toDataURL', {
+      value: function() {
+        // Return a consistent, non-unique data URL
+        return 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='; // 1x1 transparent PNG
+      },
+      writable: true,
+      configurable: true
+    });
+
+    const originalGetImageData = CanvasRenderingContext2D.prototype.getImageData;
+    Object.defineProperty(CanvasRenderingContext2D.prototype, 'getImageData', {
+      value: function(sx, sy, sw, sh) {
+        // Return ImageData with consistent, non-unique pixel data
+        const imageData = originalGetImageData.call(this, sx, sy, sw, sh);
+        for (let i = 0; i < imageData.data.length; i++) {
+          imageData.data[i] = 0; // Set all pixels to black/transparent
+        }
+        return imageData;
+      },
+      writable: true,
+      configurable: true
+    });
+    console.log('Canvas fingerprinting spoofed.');
+  } catch (e) {
+    console.error('Error spoofing canvas:', e);
+  }
+}
+
 spoofTimezone();
 spoofGeolocation();
+spoofCanvas();
