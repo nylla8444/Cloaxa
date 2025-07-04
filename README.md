@@ -21,7 +21,7 @@ This extension configures your browser to use a SOCKS5 proxy running on `127.0.0
 *   **Timezone Spoofing:** Reports a generic UTC timezone to websites, helping to mitigate timezone-based browser fingerprinting.
 *   **Geolocation Spoofing:** Intercepts geolocation requests and provides a generic, fake location to prevent websites from accessing your real physical coordinates.
 *   **Persistence:** The extension's state (Tor enabled/disabled) is saved and restored across browser sessions.
-*   **"New Identity" Button:** Allows users to quickly request a new Tor circuit, effectively changing their exit IP address.
+*   **"New Identity" Button:** Allows users to quickly request a new Tor circuit. While this often results in a new exit IP address, it is not guaranteed. See "Limitations" for more details.
 
 ## ✨ How it looks like:
 
@@ -93,6 +93,7 @@ To help you understand the extension's current state, the popup displays several
 *   **Browser-Level Only:** This extension only affects traffic originating from the browser. It does not provide system-wide IP masking like a full VPN client.
 *   **External Tor Dependency:** It relies on a locally running Tor service. It does not provide the Tor network access itself.
 *   **Advanced Fingerprinting:** While it implements several anti-fingerprinting measures, highly sophisticated tracking techniques might still exist that could potentially bypass these overrides.
+*   **Exit IP Address Not Guaranteed:** While the "New Identity" button requests a new Tor circuit, it does not guarantee a new exit IP address. Tor's design aims for anonymity, and while circuits are frequently changed, the pool of available exit nodes might be limited, or a website might use other fingerprinting techniques to identify you even with a new IP.
 
 ## 📜 Disclaimer
 
