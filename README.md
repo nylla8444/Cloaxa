@@ -1,9 +1,9 @@
 # Cloaxa 🧅
 
- <img src="icons/cloaxa.png" alt="Cloaxa Logo" width="200" height="200"/>
+ <img src="icons/cloaxa.png" alt="Cloaxa Logo" width="100%" height="auto"/>
 
 
-Cloaxa is a browser extension designed to enhance your online privacy by routing your web traffic through the Tor network and implementing various anti-tracking measures.
+<h1 style="text-align: center;"> Cloaxa is a browser extension designed to enhance your online privacy by routing your web traffic through the Tor network and implementing various anti-tracking measures.</h1>
 
 ## ⚙️ How it Works
 
